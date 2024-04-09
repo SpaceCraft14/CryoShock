@@ -1,0 +1,416 @@
+[server]
+id = CryoShock # Даёт тебе возможность менять id сервера
+rules_file = InGameRules.txt # Файл который отвечает за правила сервера
+rules_header = ui-rules-header # Локализация заголовка правил
+
+[ambience]
+cooldown = 0.1 # Время перед тем как воспроизвести ещё раз шум от предметов
+range = 8 # Радиус для шума
+max_sounds = 16 # Максимальное количество источников шума одновременно
+min_max_sounds_configured = 16 # Минимальное значение которое сможет установить клиент для себя
+max_max_sounds_configured = 64 # Обратно минимальному значению которое сможет установить клиент для себя
+volume = 1.5 # Сила шума
+music_volume = 1.5 # Сила шума музыки
+lobby_music_volume = 0.50 # Громкость музыки лобби
+interface_volume = 0.50 # Громкость звуков интерфейса
+lobby_music_enabled = true # Музыка в лобби
+event_music_enabled = true # Музыка событий
+restart_sounds_enabled = true # Музыка рестарта
+admin_sounds_enabled = true # Музыка от администрации
+admin_chat_sound_path = /Audio/Items/pop.ogg # POP!
+admin_chat_sound_volume = -5 # Уровень громкости POP!
+ahelp_sound = /Audio/Effects/adminhelp.ogg # BWONK!
+
+[status]
+mommiurl = ""
+mommipassword = "" 
+# Необходимые квары для работы бота, что отдаёт удалённые комманды.
+
+[events]
+enabled = true # События по типу бюр ошибки
+ramping_average_end_time = 40 # Вроде время в минутах, на котором уровень угрозы от рандомизатора останавливается
+ramping_average_chaos = 6 # Какая - то странная поебень.
+
+[game]
+dummyticker = false # Не будет ли работать GameTicker
+lobbyenabled = true # Будет ли лобби в игре
+lobbyduration = 150 # Время в лобби перед следующим раундом.
+disallowlatejoins = false # Не позволять ли игрокам заходить в начатый раунд
+defaultpreset = secret # Режим по умолчанию
+fallbackenabled = true # Экстренный откат режима, если текущий режим не может быть начат
+fallbackpreset = Traitor,Extended # Режимы экстренного отката режима
+enablewin = true # Определяет может ли игрок выйграть в Смертельном матче
+maxcharacterslots = 1 # Максимально количество слотов для персонажей.
+map = BunkerMap #Самая первая карта для сервера
+usepersistence = false # Узнать, что значит квар
+persistencemap = Empty # Загружает такую карту если включено преведущее значение
+map_pool = DefaultMapPool # Пул карт
+map_memory_depth = 16 # Глубина очереди, в которой игра запоминает ротацию карт которые были запущены в игру
+map_rotation = true # Ротация карт включена?
+role_timers = true # Таймеры ролей
+cryo_sleep_rejoining = false # Ожидать ли игрока, пока тот вернётся в игру после того, как зайдёт внутрь криокапсулы?
+station_offset = true # Смещение станции относительно карты
+maxstationoffset = 1000 # Максимальное растояние от начальное координаты станции
+station_rotation = true # Включать ли поворот станции относительно карты?
+persistguests = true # Личные предпочтения для игроков
+diagonalmovement = true # Диагональное перемещение
+soft_max_players = 30 # Максимальное количество игроков
+server_full_reconnect_delay = 30 # Время которое игроку нужно будет ожидать прежде чем попытаться подключиться вновь
+panic_bunker.enabled = false # Бункер
+panic_bunker.disable_with_admins = false # Бункер
+panic_bunker.enable_without_admins = false # Бункер
+panic_bunker.count_deadminned_admins = false # Бункер
+panic_bunker.show_reason = false # Показывать ли игроку причину отключения.
+panic_bunker.min_account_age = 1440 # Минимальное количество времени жизни аккаунта
+panic_bunker.min_overall_hours = 10 # Минимальное количество общих часов
+#panic_bunker.custom_reason = "" # Кастомная причина для показа игрокам при отключении
+panic_bunker.whitelisted_can_bypass = true 
+table_bonk = false # УДАРЯТЬ ИГРОКОВ ОБ СТОЛ
+global_status_icons_enabled = true # Отображать ли для всех статус ССД
+local_status_icons_enabled = true # Отображать ли статус ССД для клиента
+debug_coordinates_admin_only = true # Координаты только для админов (ЖМОТЫ!!!)
+round_start_fail_shutdown_count = 3 # Количество неудачных попыток запуска раунда перед тем как сервер автоматически выключится
+alert_level_change_delay = 30 # Время перед тем как позволить игрокам изменить уровень угрозы
+round_restart_time = 120 # Время перед тем как раунд передёт в лобби после его конца.
+secret_weight_prototype = Secret # Херьня какеито
+round_end_sound_collection = RoundEnd # Музыка для конца раунда
+
+[discord]
+# ahelp_webhook = https://discord.gg/s3tdFRUv6j # Ссылка для Ahelp сообщений 
+# ahelp_footer_icon = "" # Иконка для сообщений ахелпа
+# ahelp_avatar = "" # Аватар для сообщений ахелпа
+# vote_webhook = "" # Вебхук голосований
+# round_update_webhook = "" # Вебхук рестартов
+# round_end_role = "" # Вебхук для пинга ролей после рестарта раунда
+
+[suspicion]
+min_players = 5
+min_traitors = 2
+players_per_traitor = 6
+starting_balance = 20
+max_time_seconds = 300
+
+[traitor]
+min_players = 5
+max_traitors = 12
+players_per_traitor = 10
+codeword_count = 4
+starting_balance = 20
+max_difficulty = 5
+max_picks = 20
+start_delay = 240
+start_delay_variance = 180
+
+[traitordm]
+starting_balance = 20
+
+[zombie]
+min_players = 20
+
+[pirates]
+min_players = 25
+max_pirates = 6
+players_per_pirate = 5
+
+[nukeops]
+spawn_ghost_roles = false
+
+[tips]
+enabled = false
+dataset = Tips
+out_of_game_frequency = 90
+in_game_frequency = 3600
+login_dataset = Tips
+
+[console]
+loginlocal = true
+login_host_user = Shon_Spider
+
+[database]
+engine = sqlite
+sqlite_dbpath = preferences.db
+# sqlite_delay
+sqlite_concurrency = 3
+pg_host = localhost
+pg_port = 5432
+pg_database = CryoShock
+pg_username = Shon_Spider
+# pg_password = ""
+pg_concurrency = 8
+pg_fake_lag = 0
+sync = false
+
+[interface]
+click_sound = /Audio/UserInterface/click.ogg
+hover_sound = /Audio/UserInterface/hover.ogg
+
+[outline]
+enabled = true
+
+[parallax]
+enabled = true
+debug = false
+low_quality = false
+
+[physics]
+relative_movement = true
+tile_friction = 40
+stop_speed = 0.1
+mob_pushing = false
+
+[hud]
+theme = 0
+held_item_show = true
+combat_mode_indicators_point_show = true
+show_looc_above_head = false
+held_item_offset = 28
+fps_counter_visible = false
+
+[npc]
+max_updates = 128
+enabled = true
+pathfinding = true
+
+[net]
+atmosdbgoverlaytickrate = 3
+gasoverlaytickrate = 3
+gasoverlaythresholds = 20
+
+[admin]
+announce_login = true
+announce_logout = true
+see_own_notes = false
+new_player_join_sound = false
+note_fresh_days = 91.31055
+note_stale_days = 365.2422
+message_wait_time = 3
+role_ban_default_severity = medium
+department_ban_default_severity = medium
+server_ban_default_severity = High
+alert.explosion_min_intensity = 60
+alert.particle_accelerator_min_power_state = 2
+show_pii_onban = false
+deadmin_on_join = false
+# override_adminname_in_client_ahelp = "" 
+afk_time = 600
+bypass_max_players = true
+
+[explosion]
+tiles_per_tick = 100
+throw_limit = 400
+node_sleep = true
+max_area = 205 783,04
+max_iterations = 500
+max_tick_time = 7
+incremental_tile = false
+persistence = 1
+single_tick_area_limit = 400
+
+[radiation]
+min_intensity = 0.05
+gridcast.update_rate = 1
+gridcast.simplified_same_grid = true
+gridcast.max_distance = 50
+
+[adminlogs]
+enabled = true
+queue_send_delay_seconds = 5
+queue_max = 5000
+pre_round_queue_max = 5000
+drop_threshold = 20000
+client_batch_size = 1000
+server_name = CryoShock
+
+[atmos]
+space_wind = true
+space_wind_pressure_force_divisor_throw = 15
+space_wind_pressure_force_divisor_push = 2500
+space_wind_max_velocity = 30
+space_wind_max_push_force = 20
+monstermos_equalization = true
+monstermos_depressurization = true
+monstermos_rip_tiles = false
+grid_impulse = false
+mmos_spacing_speed = 0.05
+mmos_min_gas = 2
+mmos_max_wind = 500
+superconduction = false
+superconduction_tile_loss = 30
+excited_groups = true
+xcited_groups_space_is_all_consuming = false
+max_process_time = 3
+tickrate = 30
+speedup = 8
+heat_scale = 8
+
+[midi]
+max_events_per_second = 1000
+max_events_per_batch = 60
+max_batches_dropped = 1
+max_lagged_batches = 8
+
+[holidays]
+enabled = false
+
+[branding]
+steam = false
+
+[ooc]
+enabled = true
+enabled_admin = true
+disabling_ooc_disables_relay = true
+enable_during_round = false
+
+[looc]
+enabled = true
+enabled_admin = true
+enabled_dead = false
+enabled_crit = false
+
+[whitelist]
+enabled = false
+reason = whitelist-not-whitelisted
+min_players = 0
+max_players = 2056
+
+[vote]
+enabled = true
+restart_enabled = true
+restart_max_players = 20
+restart_ghost_percentage = 75
+preset_enabled = true
+map_enabled = true
+restart_required_ratio = 0.85
+restart_not_allowed_when_admin_online = false
+same_type_timeout = 240
+timermap = 90
+timerrestart = 120
+timerpreset = 60
+timeralone = 20
+
+[ban] 
+hardware_ids = true
+
+[procgen]
+preload = true
+
+[shuttle]
+camera_rotation_locked = true
+arrivals_planet = true
+arrivals = true
+arrivals_map = /Maps/Misc/terminal.yml
+arrivals_cooldown = 50
+arrivals_returns = true
+grid_fill = false
+emergency_early_launch_allowed = false
+emergency_dock_time = 180
+emergency_authorize_time = 10
+emergency_transit_time_min = 60
+emergency_transit_time_max = 180
+emergency = true
+recall_turning_point = 0.5
+auto_call_time = 90
+auto_call_extension_time = 45
+
+[crewmanifest]
+no_entity = true
+unsecure = true
+
+[biomass]
+easy_mode = false
+
+[anomaly]
+generation_grid_bounds_scale = 0.6
+
+[chat]
+rate_limit_period = 2
+rate_limit_count = 10
+rate_limit_announce_admins = true
+rate_limit_announce_admins_delay = 15
+max_message_length = 1000
+max_announcement_length = 256
+chat_sanitizer_enabled = true
+show_typing_indicator = true
+enable_fancy_bubbles = true
+fancy_name_background = false
+motd = "Вы на сервере CryoShock, сервер находиться в режиме разработки и создан для игры друзей и для друзей."
+
+[afk]
+time = 60
+
+[ic]
+restricted_names = true
+flavor_text = true
+name_case = false
+random_characters = false
+random_species_weights = SpeciesWeights
+show_ssd_indicator = true
+
+[flavor]
+limit = 10
+
+[mapping]
+autosave = true
+autosave_interval = 600
+autosave_dir = Mapping_autosaves
+
+[rules]
+time = 0
+exempt_local = true
+
+[autogen]
+# destination_file = ""
+
+[netres]
+store_enabled = true
+store_deletion_days = 7
+
+[control]
+drag_dead_zone = 12
+toggle_walk = false
+static_storage_ui = true
+opaque_storage_background = false
+
+[update]
+restart_delay = 20
+
+[ghost]
+role_time = 3
+
+[firealarm]
+allaccess = true
+
+[playtime]
+save_interval = 900
+
+[infolinks]
+discord = https://discord.gg/s3tdFRUv6j
+forum = ""
+github = ""
+website = ""
+wiki = ""
+patreon = ""
+bug_report = ""
+appeal = ""
+
+[config]
+presets = server_config
+# preset_development = true
+# preset_debug = true
+
+[worldgen]
+enabled = true
+worldgen_config = Default
+maximum_time_ms = 5
+
+[replay]
+record_admin_chat = false
+auto_record = false
+auto_record_name = "{year}_{month}_{day}-{hour}_{minute}-round_{round}.zip"
+# auto_record_temp_dir = ""
+
+[gateway]
+generator_enabled = true
+
+[debug]
+option_visualizer_test = false
